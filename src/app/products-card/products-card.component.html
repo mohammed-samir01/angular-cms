@@ -13,11 +13,11 @@
       >
     </p>
     <div class="d-flex justify-content-evenly">
-      <button (click)="goToProductDetails()" class="btn btn-primary">More Details</button>
-      <button (click)="goToEditProductPage()" class="btn btn-dark">Edit Product</button>
+      <button (click)="goToProductDetails(product.id)" class="btn btn-primary">More Details</button>
+      <button (click)="goToEditProductPage(product.id)" class="btn btn-dark">Edit Product</button>
       <button (click)="goToDeleteProductPage()" class="btn btn-danger">Delete Product</button>
     </div>
-    <p class="mt-4 text-success" *ngIf="counter > 0">{{ counter | count }}</p>
-    <p class="mt-4 text-danger" *ngIf="counter == 0">{{ counter | count }}</p>
+    <p class="mt-4 text-success" *ngIf="product.rating.count > 0">{{ product.rating.count | count }}</p>
+    <p class="mt-4 text-danger" *ngIf="product.rating.count == 0">{{ product.rating.count | count }}</p>
   </div>
 </div>

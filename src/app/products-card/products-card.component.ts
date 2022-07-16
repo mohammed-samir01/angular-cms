@@ -8,7 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./products-card.component.css'],
 })
 export class ProductsCardComponent implements OnInit {
-  counter: number = 0;
 
   @Input() product: Products = {
     id: 0,
@@ -23,16 +22,20 @@ export class ProductsCardComponent implements OnInit {
     },
   };
 
+  // counter:number = this.product.rating.count;
+
   constructor(private router:Router) {}
 
-  ngOnInit(): void {}
-
-  goToProductDetails(){
-    this.router.navigate(['/product-details']);
+  ngOnInit(): void {
+    // console.log(this.counter);
   }
 
-  goToEditProductPage(){
-    this.router.navigate(['/edit-product']);
+  goToProductDetails(id:number){
+    this.router.navigate(['/product-details',this.product.id]);
+  }
+
+  goToEditProductPage(id:number){
+    this.router.navigate(['/edit-product',this.product.id]);
   }
 
   goToDeleteProductPage(){

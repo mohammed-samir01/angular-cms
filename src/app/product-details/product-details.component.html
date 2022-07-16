@@ -1,1 +1,28 @@
-<p>product-details works!</p>
+<div class="card mb-3">
+    <div class="row g-0">
+        <div class="col-md-4">
+            <img [src]="productDetails?.image" class="img-fluid rounded-start" alt="..." />
+        </div>
+        <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{ productDetails?.title }}</h5>
+                <p class="card-text">
+                    {{ productDetails?.description }}
+                </p>
+                <p class="card-text">
+                    <small class="text-muted">rating {{ productDetails?.rating?.rate }}</small>
+                </p>
+                <p class="card-text mb-5">
+                    <small class="text-muted bg-light p-2">Price {{ productDetails?.price | currency: "USD" }}</small
+          >
+        </p>
+
+        <p class="card-text">
+          <small class="text-muted">Last updated 3 mins ago</small>
+                </p>
+                <p class="mt-4 text-success" *ngIf="counter > 0">{{ counter | count }}</p>
+                <p class="mt-4 text-danger" *ngIf="counter == 0">{{ counter | count }}</p>
+            </div>
+        </div>
+    </div>
+</div>

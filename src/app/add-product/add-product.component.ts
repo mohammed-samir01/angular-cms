@@ -11,5 +11,8 @@ export class AddProductComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  handelSubmitForm(productForm:any){
+    console.log(productForm);
+  }
 
 }
