@@ -1,5 +1,8 @@
-<div class="row">
-    <div class="col-4 g-4" *ngFor="let product of productsList">
-        <app-products-card></app-products-card>
+<div class="row g-0">
+    <h1 class="text-center mt-5">
+        All Products
+    </h1>
+    <div class="col-4 g-4 d-flex justify-content-evenly" *ngFor="let product of productsList">
+        <app-products-card [product]="product"></app-products-card>
     </div>
 </div>

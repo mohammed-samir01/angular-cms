@@ -1,19 +1,43 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Products } from './../interface/products';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-card',
   templateUrl: './products-card.component.html',
-  styleUrls: ['./products-card.component.css']
+  styleUrls: ['./products-card.component.css'],
 })
 export class ProductsCardComponent implements OnInit {
+  counter: number = 0;
 
-  counter = 5;
+  @Input() product: Products = {
+    id: 0,
+    title: '',
+    price: 0,
+    description: '',
+    category: '',
+    image: '',
+    rating: {
+      rate: 0,
+      count: 0,
+    },
+  };
 
-  @Input () productName:string = "product name";
+  constructor(private router:Router) {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
+  goToProductDetails(){
+    this.router.navigate(['/product-details']);
   }
+
+  goToEditProductPage(){
+    this.router.navigate(['/edit-product']);
+  }
+
+  goToDeleteProductPage(){
+    this.router.navigate(['/delete-product']);
+  }
+
 
 }

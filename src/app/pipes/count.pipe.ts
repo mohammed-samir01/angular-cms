@@ -5,7 +5,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CountPipe implements PipeTransform {
 
-  transform(value: number, ...args: unknown[]): unknown {
+  transform(value: number, ...args: unknown[]):string {
     if(value > 0){
       return 'In Stock';
     }else{
@@ -14,3 +14,5 @@ export class CountPipe implements PipeTransform {
   }
 
 }
+
+

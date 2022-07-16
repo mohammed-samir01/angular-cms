@@ -14,6 +14,10 @@ import { AddProductComponent } from './add-product/add-product.component';
 import { CartComponent } from './cart/cart.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterComponent } from './footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -27,13 +31,16 @@ import { RegisterComponent } from './register/register.component';
     AddProductComponent,
     CartComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    EditProductComponent,
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
-  ],
+    BrowserAnimationsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

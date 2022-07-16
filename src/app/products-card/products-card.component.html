@@ -1,13 +1,23 @@
-<div class="container">
-    <div class="card" style="width: 18rem">
-        <img src="..." class="card-img-top" alt="..." />
-        <div class="card-body">
-            <h5 class="card-title">{{productName}}</h5>
-            <p class="card-text">
-                Some quick example text to build on the card title and make up the bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-primary">{{productName}}</a>
-            <p class="mt-4">{{counter | count}}</p>
-        </div>
+<div class="card h-100">
+    <img [src]="product.image" class="card-img-top" alt="..." />
+    <div class="card-body">
+        <h5 class="card-title">{{ product.title }}</h5>
+        <p class="card-text">
+            {{ product.description }}
+        </p>
+        <p class="card-text">
+            <small class="text-muted">rating {{ product.rating.rate }}</small>
+        </p>
+        <p class="card-text mb-5">
+            <small class="text-muted bg-light p-2">Price {{ product.price | currency: "USD" }}</small
+      >
+    </p>
+    <div class="d-flex justify-content-evenly">
+      <button (click)="goToProductDetails()" class="btn btn-primary">More Details</button>
+      <button (click)="goToEditProductPage()" class="btn btn-dark">Edit Product</button>
+      <button (click)="goToDeleteProductPage()" class="btn btn-danger">Delete Product</button>
     </div>
+    <p class="mt-4 text-success" *ngIf="counter > 0">{{ counter | count }}</p>
+    <p class="mt-4 text-danger" *ngIf="counter == 0">{{ counter | count }}</p>
+  </div>
 </div>
